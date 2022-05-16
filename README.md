@@ -8,10 +8,10 @@ The ```<dialog>``` tag is an HTML element used to easily create popup dialogs or
 
 Firstly, you are going to need to create an HTML page with the following code insereted in the ```<body>``` section:
 ```html
-        <dialog class="dialog">
-            <h2>This is a modal</h2>
-            <button id="close">Close</button>
-        </dialog>
+    <dialog class="dialog">
+        <h2>This is a modal</h2>
+        <button id="close">Close</button>
+    </dialog>
 ```
 Note that a close button is not necessary to close the modal, the ```<dialog>``` tag has built in functionality that allows the escape key to close modals automatically.
 
@@ -34,21 +34,21 @@ Right now you modal should look pretty bland, which means it's time for some CSS
 
 Firstly, there is ```dialog[open]``` selector. This selector allows you to style the modal when it is opened, allowing you to add a nice transition like this:
 ```css
-        dialog[open] {
-            animation: appear .7s ease-in-out;
+    dialog[open] {
+        animation: appear .7s ease-in-out;
+    }
+
+    @keyframes appear {
+        from {
+            opacity: 0;
+            transform: translateY(-8px);
         }
 
-        @keyframes appear {
-            from {
-                opacity: 0;
-                transform: translateY(-8px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        to {
+            opacity: 1;
+            transform: translateY(0);
         }
+    }
 ```
 
 There is also the ```::backdrop``` pseudo-element, which allows you to easily style the background behind the modal.
